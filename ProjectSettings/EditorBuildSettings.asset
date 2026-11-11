@@ -8,5 +8,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Classroom_Prototype.unity
     guid: f76eeda2dd2865840a280d3bf36f0c69
+  - enabled: 1
+    path: Assets/Scenes/Hallway_Prototype.unity
+    guid: 7a7081839e306b441b0697ad72cb38a1
+  - enabled: 1
+    path: Assets/Scenes/Rooftop_Prototype.unity
+    guid: b185cdb48c21ef046b6302193af427fd
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

@@ -11,14 +11,18 @@ public class ClassroomPrototype : MonoBehaviour
     private float pitch;
     private bool otherWorld;
     private int dialogue;
-    private bool messageSent;
+    private static bool messageSent;
     private string focus;
     private GUIStyle textStyle;
     private GUIStyle buttonStyle;
 
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    private static void ResetProgress() => messageSent = false;
+
     private void Start()
     {
         if (player == null) BuildClassroom();
+        ApplyWorld();
         LockCursor(true);
     }
 
@@ -180,4 +184,3 @@ public class ClassroomPrototype : MonoBehaviour
         if(GUI.Button(new Rect(area.x+width/2+10,area.y+150,width/2-30,75),dialogue==1?"2 — ไว้ก่อน":"2 — กลับไปสำรวจ",buttonStyle)) Choose(2);
     }
 }
-

@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -9,7 +10,7 @@ public static class CreateClassroom
         var scene=EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
         new GameObject("Classroom Prototype").AddComponent<ClassroomPrototype>().BuildClassroom();
         EditorSceneManager.SaveScene(scene,"Assets/Scenes/Classroom_Prototype.unity");
-        EditorBuildSettings.scenes=new[]{new EditorBuildSettingsScene("Assets/Scenes/Classroom_Prototype.unity",true)};
+        EditorBuildSettings.scenes = EditorBuildSettings.scenes.Where(entry => entry.path != "Assets/Scenes/Classroom_Prototype.unity").Prepend(new EditorBuildSettingsScene("Assets/Scenes/Classroom_Prototype.unity", true)).ToArray();
         AssetDatabase.SaveAssets();
     }
 
