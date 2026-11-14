@@ -1,0 +1,343 @@
+{
+  "skill_count": 33,
+  "upstream_count": 28,
+  "custom_count": 5,
+  "checks": [
+    {
+      "name": "audio-design",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "audio-setup-mixers",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "camera-systems",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "dialogue-systems",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "game-ai",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "game-docs",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "game-ui-ux",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "horror-director",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "level-design",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "memory-system",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "optimize-text-mesh-pro",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "performance-optimization",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "psychological-combat",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "relationship-system",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "rpg",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "save-systems",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "shader-graph-create-custom-node",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "shader-programming",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "ui-imgui",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "ui-ugui",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "unity-animation",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "unity-cli",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "unity-csharp-scripting",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "unity-input-system",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "unity-navmesh",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "unity-package-management",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "unity-physics",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "unity-pipeline",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "unity-scriptableobjects",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "unity-third-person-controller",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "urp-postprocessing",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "validate-urp-render-graph-renderer-feature",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    },
+    {
+      "name": "visual-novel",
+      "valid": true,
+      "detail": "Skill is valid!",
+      "duplicate": false,
+      "folder_matches_name": true
+    }
+  ],
+  "preexisting_tracked_files_changed": [],
+  "tracked_files_checked": 109,
+  "discovery_scope": "Unity project root and descendants; outer parent working directory is not a discovery ancestor of these skills.",
+  "native_session_discovery": "Not yet observed in the current outer-parent chat. Open the Unity project root for automatic discovery.",
+  "bundled_python_script_review": [
+    {
+      "file": ".agents/skills/game-docs/scripts/check_docs.py",
+      "syntax": "valid",
+      "imports": [
+        "__future__",
+        "argparse",
+        "dataclasses",
+        "json",
+        "os",
+        "pathlib",
+        "re",
+        "stat",
+        "sys",
+        "unicodedata",
+        "urllib.parse"
+      ],
+      "executed": false
+    },
+    {
+      "file": ".agents/skills/unity-csharp-scripting/scripts/check_unity_project.py",
+      "syntax": "valid",
+      "imports": [
+        "__future__",
+        "argparse",
+        "dataclasses",
+        "json",
+        "os",
+        "pathlib",
+        "re",
+        "stat",
+        "sys",
+        "typing"
+      ],
+      "executed": false
+    }
+  ],
+  "expected_template_document_links": [
+    {
+      "file": ".agents/skills/game-docs/references/architecture-template.md",
+      "link": "GDD.md"
+    },
+    {
+      "file": ".agents/skills/game-docs/references/architecture-template.md",
+      "link": "GDD.md"
+    },
+    {
+      "file": ".agents/skills/game-docs/references/architecture-template.md",
+      "link": "features/combo/implementation.md"
+    },
+    {
+      "file": ".agents/skills/game-docs/references/feature-templates.md",
+      "link": "../../GDD.md"
+    },
+    {
+      "file": ".agents/skills/game-docs/references/feature-templates.md",
+      "link": "implementation.md"
+    },
+    {
+      "file": ".agents/skills/game-docs/references/feature-templates.md",
+      "link": "testing.md"
+    },
+    {
+      "file": ".agents/skills/game-docs/references/feature-templates.md",
+      "link": "design.md"
+    },
+    {
+      "file": ".agents/skills/game-docs/references/feature-templates.md",
+      "link": "testing.md"
+    },
+    {
+      "file": ".agents/skills/game-docs/references/feature-templates.md",
+      "link": "design.md"
+    },
+    {
+      "file": ".agents/skills/game-docs/references/feature-templates.md",
+      "link": "implementation.md"
+    },
+    {
+      "file": ".agents/skills/game-docs/references/feature-templates.md",
+      "link": "../<slug>/testing.md"
+    },
+    {
+      "file": ".agents/skills/game-docs/references/gdd-template.md",
+      "link": "ARCHITECTURE.md"
+    },
+    {
+      "file": ".agents/skills/game-docs/references/gdd-template.md",
+      "link": "features/lane-movement/design.md"
+    },
+    {
+      "file": ".agents/skills/game-docs/references/gdd-template.md",
+      "link": "features/combo/design.md"
+    },
+    {
+      "file": ".agents/skills/game-docs/references/gdd-template.md",
+      "link": "features/combo/design.md"
+    }
+  ],
+  "missing_required_relative_markdown_links": [],
+  "installed_file_hashes_verified": 86
+}

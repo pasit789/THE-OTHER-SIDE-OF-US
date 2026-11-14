@@ -1,0 +1,415 @@
+{
+  "installed_on": "2026-11-14",
+  "skills": [
+    {
+      "name": "audio-setup-mixers",
+      "repository": "Unity-Technologies/unity-agent-plugin",
+      "commit": "2d68641b24055d9845cb2804bf5a331cc2ff98d9",
+      "path": "skills/audio-setup-mixers",
+      "upstream_skill_sha256": "dddb0d19904420554a87e85d5d5b3d16e4536c8aac61adce1313e30d3cf3c3ea",
+      "adaptations": [],
+      "files": {
+        "references/api.md": "a0b1ee9132f2771b30d2024aaec684229d516ad33a20677090bde4ef4dab3806",
+        "SECURITY.md": "63c81b7440d8ebcf1024f738f3b63b0cb497e634c7917849676e8ecf7f3c3853",
+        "SKILL.md": "dddb0d19904420554a87e85d5d5b3d16e4536c8aac61adce1313e30d3cf3c3ea"
+      }
+    },
+    {
+      "name": "optimize-text-mesh-pro",
+      "repository": "Unity-Technologies/unity-agent-plugin",
+      "commit": "2d68641b24055d9845cb2804bf5a331cc2ff98d9",
+      "path": "skills/optimize-text-mesh-pro",
+      "upstream_skill_sha256": "c10d1137bbb886846820f24073218d0fac062d11606b90162f3761716935e9d8",
+      "adaptations": [],
+      "files": {
+        "SKILL.md": "c10d1137bbb886846820f24073218d0fac062d11606b90162f3761716935e9d8"
+      }
+    },
+    {
+      "name": "shader-graph-create-custom-node",
+      "repository": "Unity-Technologies/unity-agent-plugin",
+      "commit": "2d68641b24055d9845cb2804bf5a331cc2ff98d9",
+      "path": "skills/shader-graph-create-custom-node",
+      "upstream_skill_sha256": "927d3d95345410d56b94fa08f9f74f42389b2d03eb80774e5f9b85b7ff01ac11",
+      "adaptations": [
+        "Moved upstream required_packages into metadata.required_packages for Codex-compatible frontmatter. Requirements unchanged."
+      ],
+      "files": {
+        "resources/all_hints.hlsl": "31952ec9470c39df41de3d47450922017a3290e3facfa5f0495e4845a4ff8a5a",
+        "SKILL.md": "45761cca324f165b60dff69e5bd7eea4d5027b690dcb44d92e2156fbe60ae79c"
+      }
+    },
+    {
+      "name": "ui-imgui",
+      "repository": "Unity-Technologies/unity-agent-plugin",
+      "commit": "2d68641b24055d9845cb2804bf5a331cc2ff98d9",
+      "path": "skills/ui-imgui",
+      "upstream_skill_sha256": "4cef7d81598408cf53f87ba22af9a80723c017670c5e978bc30c93fdda55b18a",
+      "adaptations": [],
+      "files": {
+        "references/gui-elements.md": "a6f2bfc30823fced91e165f184207979995d978a405235a11929bf32f4ea0f49",
+        "references/templates.md": "5651e13ff1531a19e9142a7c92c1423cbab2c4f8d5eb2ce02e242d51073e52b3",
+        "SKILL.md": "4cef7d81598408cf53f87ba22af9a80723c017670c5e978bc30c93fdda55b18a"
+      }
+    },
+    {
+      "name": "ui-ugui",
+      "repository": "Unity-Technologies/unity-agent-plugin",
+      "commit": "2d68641b24055d9845cb2804bf5a331cc2ff98d9",
+      "path": "skills/ui-ugui",
+      "upstream_skill_sha256": "dad98d97ecc224c65c9a38eec65e7a7be7018084a505f8d68470ff1a42ab950d",
+      "adaptations": [],
+      "files": {
+        "references/scrollview-setup.md": "41d6a37cb5e78b632baea633583129e27b3bed353904ab6425cc954944873eaf",
+        "SKILL.md": "dad98d97ecc224c65c9a38eec65e7a7be7018084a505f8d68470ff1a42ab950d"
+      }
+    },
+    {
+      "name": "unity-cli",
+      "repository": "Unity-Technologies/unity-agent-plugin",
+      "commit": "2d68641b24055d9845cb2804bf5a331cc2ff98d9",
+      "path": "skills/unity-cli",
+      "upstream_skill_sha256": "d6334625bdd48a4e166ba45b14a2b012199e3a5b91001a7e01dc67bbb834bb02",
+      "adaptations": [],
+      "files": {
+        "CHANGELOG.md": "68fc577845ea752d5e4f7721531ff91413699052a63cbd6ec518c4a9a25daf4e",
+        "references/auth-license-cloud.md": "462606f1b7e4fff5b9acfe7f4053fcaa74173d6ee7646781eebe4207dc377cd3",
+        "references/build-run-test.md": "d556980d60bc54495224f99d79cb74b7c5ced22777d170c21d9772498371bafa",
+        "references/cloud-automation.md": "d3f796489405164dbbff7db7cd7ac2007495eda6b84cd7226ca977ee78d3d4f0",
+        "references/collaboration.md": "dcf5142d5ecec3ac80ca50a4e68ff204592c6de3d42c3ceedbd2e2aed2010003",
+        "references/config-hub.md": "a249f7158af79d588164bf44a708d2491d4f1422b631990e2bf168a6721e0889",
+        "references/diagnostics-maintenance.md": "71e588488a530f04e5be6940ebc169e0f44d150579468df0fd2a290ef404cf90",
+        "references/docs-workflow.md": "1b3d2606dc64aa5cb2ca5ba2d1e4ff6339834f0d5a27222eb63cccfa728d8049",
+        "references/editors-install.md": "2d3acb82608684de0912a4c351599a906297108e4a919351361d642f72b67373",
+        "references/integration-advanced.md": "2f92938e9a35342531d1ee9c7c8d4e6f864fc6aff027872d832c940ca0b662d5",
+        "references/playmode-verification-loop.md": "965d376280037f36a53ade3cae6c0debc57d84e0d42c542bc4fc729942a15562",
+        "references/projects-templates.md": "2b02c807efb0df152417fd0961c14ac70254e44890f4202d9a274cff375cb746",
+        "references/version-control.md": "78763e39251d0b424cac1253dcb0f09ef3636257d827c96bc80c855a792ca7e3",
+        "SECURITY.md": "add93917beee72ab80b080a0dee5140c6604fd7d7983be307a881a2ac1ff7185",
+        "SKILL.md": "d6334625bdd48a4e166ba45b14a2b012199e3a5b91001a7e01dc67bbb834bb02"
+      }
+    },
+    {
+      "name": "unity-pipeline",
+      "repository": "Unity-Technologies/unity-agent-plugin",
+      "commit": "2d68641b24055d9845cb2804bf5a331cc2ff98d9",
+      "path": "skills/unity-pipeline",
+      "upstream_skill_sha256": "986765a346437deacc9e9bf49f198bb9ca2edd17f3447e286e73db5ad601abec",
+      "adaptations": [],
+      "files": {
+        "SECURITY.md": "68097e70d4bebbf2beadc8e7816cf6af0822ae27c93def77c6bd554cf2c34e0f",
+        "SKILL.md": "986765a346437deacc9e9bf49f198bb9ca2edd17f3447e286e73db5ad601abec"
+      }
+    },
+    {
+      "name": "unity-package-management",
+      "repository": "Unity-Technologies/unity-agent-plugin",
+      "commit": "2d68641b24055d9845cb2804bf5a331cc2ff98d9",
+      "path": "skills/unity-package-management",
+      "upstream_skill_sha256": "8c1a1bcd5a9270c626637f3251ca7c1fc273c02b790a093a39c95f4e9166c956",
+      "adaptations": [],
+      "files": {
+        "references/select-packages.md": "152dda502a38c421b1ec38337179b9c1c59795f31c65d27cf80708183858e233",
+        "SKILL.md": "8c1a1bcd5a9270c626637f3251ca7c1fc273c02b790a093a39c95f4e9166c956"
+      }
+    },
+    {
+      "name": "urp-postprocessing",
+      "repository": "Unity-Technologies/unity-agent-plugin",
+      "commit": "2d68641b24055d9845cb2804bf5a331cc2ff98d9",
+      "path": "skills/urp-postprocessing",
+      "upstream_skill_sha256": "aec3d71149b4af866a35e7b06613846f899a2f19e9aa50a17d3b0250cfc32e7b",
+      "adaptations": [
+        "Moved upstream required_packages into metadata.required_packages for Codex-compatible frontmatter. Requirements unchanged."
+      ],
+      "files": {
+        "references/code-templates.md": "27e0ca4d360cfa5d7c1d752ca28477f92bc7b621afb04cd54f9a75ad9be9060f",
+        "references/effect-reference.md": "63ffdb38717dec67f0a474d65dfc979fab703eecc305080b00197a41c7a88282",
+        "SECURITY.md": "85c1642d2fe08d8601933fbed9967bddafcadcf75f7dc6750c2c5d195da9d21d",
+        "SKILL.md": "c03a48cba8b95bdbb8c92cc01c41e2f3e26e5bfdcbd9b9b50816d4106717816a"
+      }
+    },
+    {
+      "name": "validate-urp-render-graph-renderer-feature",
+      "repository": "Unity-Technologies/unity-agent-plugin",
+      "commit": "2d68641b24055d9845cb2804bf5a331cc2ff98d9",
+      "path": "skills/validate-urp-render-graph-renderer-feature",
+      "upstream_skill_sha256": "ae28f9c3aaa52342bc2448d61dd9baf0ff81eea24c4d02d39c068e253f77f6a5",
+      "adaptations": [],
+      "files": {
+        "SKILL.md": "ae28f9c3aaa52342bc2448d61dd9baf0ff81eea24c4d02d39c068e253f77f6a5"
+      }
+    },
+    {
+      "name": "audio-design",
+      "repository": "gamedev-skills/awesome-gamedev-agent-skills",
+      "commit": "c6ca6c41c839b68319ffc08430b99ab768debc32",
+      "path": "skills/disciplines/audio-design",
+      "upstream_skill_sha256": "ad31e41ac14d10a4dfa89403dc96632fcda21bd1710017210846afcd7b52fd5d",
+      "adaptations": [],
+      "files": {
+        "references/adaptive-music.md": "009352dde03611e1b633558b5b5268d3785ca1416211376b7fda3717c137a27d",
+        "SKILL.md": "ad31e41ac14d10a4dfa89403dc96632fcda21bd1710017210846afcd7b52fd5d"
+      }
+    },
+    {
+      "name": "camera-systems",
+      "repository": "gamedev-skills/awesome-gamedev-agent-skills",
+      "commit": "c6ca6c41c839b68319ffc08430b99ab768debc32",
+      "path": "skills/disciplines/camera-systems",
+      "upstream_skill_sha256": "a240892c3a049e19f3fb011c1648896d35fc2bf907906c5f6fcffa1fd37f5f3c",
+      "adaptations": [],
+      "files": {
+        "references/follow-and-framing.md": "d4eae82aeda34969ba1465db9da2bc412eae4e3161418bde7a439fac3c049dae",
+        "SKILL.md": "a240892c3a049e19f3fb011c1648896d35fc2bf907906c5f6fcffa1fd37f5f3c"
+      }
+    },
+    {
+      "name": "dialogue-systems",
+      "repository": "gamedev-skills/awesome-gamedev-agent-skills",
+      "commit": "c6ca6c41c839b68319ffc08430b99ab768debc32",
+      "path": "skills/disciplines/dialogue-systems",
+      "upstream_skill_sha256": "4df2872fc43e66c9f1844ffceb1479a08d670cff6a7e01e46454fda455a2c621",
+      "adaptations": [],
+      "files": {
+        "references/ink-and-yarn.md": "498a8704056a482fb34234133967d1c6f130724610f9c9fa8f3195206e5ba0e4",
+        "references/runner.md": "ce5e5985865dcf4aaf08f3f461ba0f51c5e56c935c7277300050c65e8a24af81",
+        "SKILL.md": "4df2872fc43e66c9f1844ffceb1479a08d670cff6a7e01e46454fda455a2c621"
+      }
+    },
+    {
+      "name": "game-ai",
+      "repository": "gamedev-skills/awesome-gamedev-agent-skills",
+      "commit": "c6ca6c41c839b68319ffc08430b99ab768debc32",
+      "path": "skills/disciplines/game-ai",
+      "upstream_skill_sha256": "5b36c3d22fbe60b3fdfd4baefaee4a8781cb1067a7ef7fa638cb04b4455491ca",
+      "adaptations": [],
+      "files": {
+        "references/fsm-perception-steering.md": "61af2d796d0ee89ecc153e02c7112df0328df579a20b08f6a0325e2458730ce3",
+        "references/pathfinding.md": "e4cc932af6bbd1ccff845caff97db3371a33538ba125288a96b2216ee0a72628",
+        "SKILL.md": "5b36c3d22fbe60b3fdfd4baefaee4a8781cb1067a7ef7fa638cb04b4455491ca"
+      }
+    },
+    {
+      "name": "game-ui-ux",
+      "repository": "gamedev-skills/awesome-gamedev-agent-skills",
+      "commit": "c6ca6c41c839b68319ffc08430b99ab768debc32",
+      "path": "skills/disciplines/game-ui-ux",
+      "upstream_skill_sha256": "69140650cd9a28dc208bd1540358f47829aabb3f0834311c3d39b7a451e8b163",
+      "adaptations": [],
+      "files": {
+        "references/layout-and-flow.md": "2adc76f28f305e44afd90667e25e65b129b21433966e9b0fbedc48dd7ab1af4f",
+        "SKILL.md": "69140650cd9a28dc208bd1540358f47829aabb3f0834311c3d39b7a451e8b163"
+      }
+    },
+    {
+      "name": "level-design",
+      "repository": "gamedev-skills/awesome-gamedev-agent-skills",
+      "commit": "c6ca6c41c839b68319ffc08430b99ab768debc32",
+      "path": "skills/disciplines/level-design",
+      "upstream_skill_sha256": "aa5d7a8f97987e12b7127460735da9ec73141452068c15801965057006ba8bec",
+      "adaptations": [],
+      "files": {
+        "references/pacing-and-flow.md": "5f3aa345ac8c165530598e540dcfa89cb9b8cdfe3c0622dc548c336cce71347c",
+        "SKILL.md": "aa5d7a8f97987e12b7127460735da9ec73141452068c15801965057006ba8bec"
+      }
+    },
+    {
+      "name": "performance-optimization",
+      "repository": "gamedev-skills/awesome-gamedev-agent-skills",
+      "commit": "c6ca6c41c839b68319ffc08430b99ab768debc32",
+      "path": "skills/disciplines/performance-optimization",
+      "upstream_skill_sha256": "61538ac2e3ef68aca3194aec7eb9f54510762e86ac81ff1a4451e9fead31a3be",
+      "adaptations": [],
+      "files": {
+        "references/profiling-and-budgets.md": "010ab745097b48f14b0843ef95b2745895c154c1829e923764caee822b9c0a65",
+        "SKILL.md": "61538ac2e3ef68aca3194aec7eb9f54510762e86ac81ff1a4451e9fead31a3be"
+      }
+    },
+    {
+      "name": "save-systems",
+      "repository": "gamedev-skills/awesome-gamedev-agent-skills",
+      "commit": "c6ca6c41c839b68319ffc08430b99ab768debc32",
+      "path": "skills/disciplines/save-systems",
+      "upstream_skill_sha256": "84620777d23dd018665ba86254fcf52fbd88e517d4cfe41b112c720711d6c908",
+      "adaptations": [],
+      "files": {
+        "references/versioning-and-migration.md": "f648f75adcf0c3028f350f07ea4202ff433ab170da4859748e2a675092c71768",
+        "SKILL.md": "84620777d23dd018665ba86254fcf52fbd88e517d4cfe41b112c720711d6c908"
+      }
+    },
+    {
+      "name": "shader-programming",
+      "repository": "gamedev-skills/awesome-gamedev-agent-skills",
+      "commit": "c6ca6c41c839b68319ffc08430b99ab768debc32",
+      "path": "skills/disciplines/shader-programming",
+      "upstream_skill_sha256": "85ed2918a801afd183361a3452f6879a711cabcc6b0ed3da60de3b07b9ad8c52",
+      "adaptations": [],
+      "files": {
+        "references/effects.md": "fd09ebb75d6f740665aea14cdc8a3ad22fc12e77adf4d3259d3ece38391a94d5",
+        "SKILL.md": "85ed2918a801afd183361a3452f6879a711cabcc6b0ed3da60de3b07b9ad8c52"
+      }
+    },
+    {
+      "name": "rpg",
+      "repository": "gamedev-skills/awesome-gamedev-agent-skills",
+      "commit": "c6ca6c41c839b68319ffc08430b99ab768debc32",
+      "path": "skills/genres/rpg",
+      "upstream_skill_sha256": "d62e3327dba436b697bfbecf34e7af022e54d3eca451d9fea5d814fe6f791caa",
+      "adaptations": [],
+      "files": {
+        "references/stats-combat-quests.md": "f22e49ff1727b82db624d36fa6138c308da9c58b0d769e73f6d63b4c65ec468e",
+        "SKILL.md": "d62e3327dba436b697bfbecf34e7af022e54d3eca451d9fea5d814fe6f791caa"
+      }
+    },
+    {
+      "name": "visual-novel",
+      "repository": "gamedev-skills/awesome-gamedev-agent-skills",
+      "commit": "c6ca6c41c839b68319ffc08430b99ab768debc32",
+      "path": "skills/genres/visual-novel",
+      "upstream_skill_sha256": "265c29c18250a83c429d24aebb8fe2f26265107815c75708b2296b14a5f3e957",
+      "adaptations": [],
+      "files": {
+        "references/script-and-flow.md": "41f25cf2f080828d6de25f815a19720c03352f688f82906ff99c5415b1923bb8",
+        "SKILL.md": "265c29c18250a83c429d24aebb8fe2f26265107815c75708b2296b14a5f3e957"
+      }
+    },
+    {
+      "name": "unity-animation",
+      "repository": "gamedev-skills/awesome-gamedev-agent-skills",
+      "commit": "c6ca6c41c839b68319ffc08430b99ab768debc32",
+      "path": "skills/unity/unity-animation",
+      "upstream_skill_sha256": "7212ef924d00f125aa50e6acc1d2299319f01e44945b2a3d4968d58b70cc0792",
+      "adaptations": [],
+      "files": {
+        "references/blend-trees-and-ik.md": "34ab71c124ae0c6798394d5a14a7571f82f78de6f8cb7687ec975cb5c1d2a423",
+        "SKILL.md": "7212ef924d00f125aa50e6acc1d2299319f01e44945b2a3d4968d58b70cc0792"
+      }
+    },
+    {
+      "name": "unity-csharp-scripting",
+      "repository": "gamedev-skills/awesome-gamedev-agent-skills",
+      "commit": "c6ca6c41c839b68319ffc08430b99ab768debc32",
+      "path": "skills/unity/unity-csharp-scripting",
+      "upstream_skill_sha256": "78cd50230e01e970ce9b3ac2ec4548157d2050aa784b4844675df118b73115fa",
+      "adaptations": [],
+      "files": {
+        "references/agent-checks.md": "71d5b4a5e8b019dca033120d093c9483fdb10882b7c26b552b62c3c06aa1b0c8",
+        "references/lifecycle-and-coroutines.md": "0227824476eb77c8edd477e2f83193facdf5a03a37ab24adfe21e3e203b2b4cc",
+        "scripts/check_unity_project.py": "ab26d4e5eabd54524a53c12bf1d03cc9fbe496a509acdd5f5de9165c5c30c724",
+        "SKILL.md": "78cd50230e01e970ce9b3ac2ec4548157d2050aa784b4844675df118b73115fa"
+      }
+    },
+    {
+      "name": "unity-input-system",
+      "repository": "gamedev-skills/awesome-gamedev-agent-skills",
+      "commit": "c6ca6c41c839b68319ffc08430b99ab768debc32",
+      "path": "skills/unity/unity-input-system",
+      "upstream_skill_sha256": "83458679e3a1ba18ff4e96233cd66529bdc4f231c814c583fb5af76385df9f74",
+      "adaptations": [],
+      "files": {
+        "references/rebinding.md": "a2ce5f56bb27058527323298f4a72fa364afd47fd7d410a9b6bc1c0ce52cb691",
+        "SKILL.md": "83458679e3a1ba18ff4e96233cd66529bdc4f231c814c583fb5af76385df9f74"
+      }
+    },
+    {
+      "name": "unity-navmesh",
+      "repository": "gamedev-skills/awesome-gamedev-agent-skills",
+      "commit": "c6ca6c41c839b68319ffc08430b99ab768debc32",
+      "path": "skills/unity/unity-navmesh",
+      "upstream_skill_sha256": "c28f4d9c1952f66efd9b11c0ccc472b20909d8aa3e5bca0a0f65222b115ab6f7",
+      "adaptations": [],
+      "files": {
+        "SKILL.md": "c28f4d9c1952f66efd9b11c0ccc472b20909d8aa3e5bca0a0f65222b115ab6f7"
+      }
+    },
+    {
+      "name": "unity-physics",
+      "repository": "gamedev-skills/awesome-gamedev-agent-skills",
+      "commit": "c6ca6c41c839b68319ffc08430b99ab768debc32",
+      "path": "skills/unity/unity-physics",
+      "upstream_skill_sha256": "7b96c4158cb012fa2030050ba7d67e9233ba3a3dc68c58011a3669f926105fb7",
+      "adaptations": [],
+      "files": {
+        "references/physics-2d.md": "4eae21e671b477c76af4dc7f10243a5a27035f766b3d5f4b992d308b8a2ecada",
+        "references/raycasting-and-joints.md": "544e608f005f37848fa3d3aa4adb9467a0da467e1a35dc5c9be3bb44d51dfedf",
+        "SKILL.md": "7b96c4158cb012fa2030050ba7d67e9233ba3a3dc68c58011a3669f926105fb7"
+      }
+    },
+    {
+      "name": "unity-scriptableobjects",
+      "repository": "gamedev-skills/awesome-gamedev-agent-skills",
+      "commit": "c6ca6c41c839b68319ffc08430b99ab768debc32",
+      "path": "skills/unity/unity-scriptableobjects",
+      "upstream_skill_sha256": "2f1aff412fd83d0b24f0344671c644c5f9825f3f48965bb15018da53f59bb76e",
+      "adaptations": [],
+      "files": {
+        "references/event-channels.md": "afc17f5c3b0116927140cdd2b9770e0755fa57425ce4cbe6bad7ee1d491c5dbe",
+        "SKILL.md": "2f1aff412fd83d0b24f0344671c644c5f9825f3f48965bb15018da53f59bb76e"
+      }
+    },
+    {
+      "name": "game-docs",
+      "repository": "gamedev-skills/awesome-gamedev-agent-skills",
+      "commit": "c6ca6c41c839b68319ffc08430b99ab768debc32",
+      "path": "skills/workflows/game-docs",
+      "upstream_skill_sha256": "210b192c944357ca24dcc6ca8054a1138f1f60667d0d8a256d26f51fe1873294",
+      "adaptations": [],
+      "files": {
+        "agents/openai.yaml": "222ba8ccc76c20f1490b83934e0befec0b9568c7cc6e4c9551171f303651ef39",
+        "references/architecture-template.md": "dd5dea135cbc6f62ff65de33d6ac68dc6d8edd20bcbe214ac9ad054a031073b8",
+        "references/doc-rules.md": "08e4e12df6eb2bd56dc4fdf02584b8bf07404a735133df1501fdb51fcafe123d",
+        "references/feature-templates.md": "a73743600db3257fb4c82ea01faf5ee0fad7ee168743660680c87d3032e169ce",
+        "references/gdd-template.md": "10eb2c0eaab87da9fe6b68cecf65bc95db17f3cd6799807eac66e2486c7f2548",
+        "references/workflow-modes.md": "724cf8c96473d3a74bba5709fed8f9dd0f62f0e74eaaef5cad6ac2cf1a76ef40",
+        "scripts/check_docs.py": "a57d65ffa2d89a61b7c7ca7fe625be2c0bf3442ff838caaffa8889cb3fcf6d8b",
+        "SKILL.md": "210b192c944357ca24dcc6ca8054a1138f1f60667d0d8a256d26f51fe1873294"
+      }
+    },
+    {
+      "name": "horror-director",
+      "repository": null,
+      "origin": "Project-authored",
+      "adaptations": [],
+      "files": {
+        "SKILL.md": "e110f484bbbc1855b395f710c4d2601c54f2594a30f96da31b74603a3babe37e"
+      }
+    },
+    {
+      "name": "memory-system",
+      "repository": null,
+      "origin": "Project-authored",
+      "adaptations": [],
+      "files": {
+        "SKILL.md": "641e7d6108034469d0f50ec456f6b9d0fdfe47f90cc545fbf57e6a90ca4a4006"
+      }
+    },
+    {
+      "name": "psychological-combat",
+      "repository": null,
+      "origin": "Project-authored",
+      "adaptations": [],
+      "files": {
+        "SKILL.md": "f137128e76df5f3c53c7bede23a3dd625b740d6bbca8d61072801d4e6083fe93"
+      }
+    },
+    {
+      "name": "relationship-system",
+      "repository": null,
+      "origin": "Project-authored",
+      "adaptations": [],
+      "files": {
+        "SKILL.md": "c547300816669e4d17c6e5ed896681c7031a7206c8764ff383cfa2c0ab998c31"
+      }
+    },
+    {
+      "name": "unity-third-person-controller",
+      "repository": null,
+      "origin": "Project-authored",
+      "adaptations": [],
+      "files": {
+        "SKILL.md": "3483302d918ce79d071282d06a0eb4ae7e85a985d3391787b50fd4c30332341b"
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "repo": "Unity-Technologies/unity-agent-plugin",
+    "commit": "2d68641b24055d9845cb2804bf5a331cc2ff98d9",
+    "paths": [
+      "skills/audio-setup-mixers",
+      "skills/optimize-text-mesh-pro",
+      "skills/shader-graph-create-custom-node",
+      "skills/ui-imgui",
+      "skills/ui-ugui",
+      "skills/unity-cli",
+      "skills/unity-pipeline",
+      "skills/unity-package-management",
+      "skills/urp-postprocessing",
+      "skills/validate-urp-render-graph-renderer-feature"
+    ]
+  },
+  {
+    "repo": "gamedev-skills/awesome-gamedev-agent-skills",
+    "commit": "c6ca6c41c839b68319ffc08430b99ab768debc32",
+    "paths": [
+      "skills/disciplines/audio-design",
+      "skills/disciplines/camera-systems",
+      "skills/disciplines/dialogue-systems",
+      "skills/disciplines/game-ai",
+      "skills/disciplines/game-ui-ux",
+      "skills/disciplines/level-design",
+      "skills/disciplines/performance-optimization",
+      "skills/disciplines/save-systems",
+      "skills/disciplines/shader-programming",
+      "skills/genres/rpg",
+      "skills/genres/visual-novel",
+      "skills/unity/unity-animation",
+      "skills/unity/unity-csharp-scripting",
+      "skills/unity/unity-input-system",
+      "skills/unity/unity-navmesh",
+      "skills/unity/unity-physics",
+      "skills/unity/unity-scriptableobjects",
+      "skills/workflows/game-docs"
+    ]
+  }
+]

@@ -105,7 +105,7 @@ public class ClassroomPrototype : MonoBehaviour
         float z=(keys.wKey.isPressed?1:0)-(keys.sKey.isPressed?1:0);
         var move=Vector3.ClampMagnitude(player.transform.right*x+player.transform.forward*z,1);
         player.Move((move*3.5f+Vector3.down*9.81f)*Time.deltaTime);
-        if(keys.tabKey.wasPressedThisFrame)
+        if(keys.qKey.wasPressedThisFrame)
         {
             otherWorld=!otherWorld;
             ApplyWorld();
@@ -163,7 +163,7 @@ public class ClassroomPrototype : MonoBehaviour
         }
         GUI.Box(new Rect(12,12,620,160),"");
         GUI.Label(new Rect(25,20,590,145),
-            (otherWorld?"โลกคู่ขนาน":"โลกจริง")+" — ห้องเรียนต้นแบบ\nWASD เดิน · เมาส์มอง · Tab สลับโลก · E โต้ตอบ · Esc เมาส์\n"+
+            (otherWorld?"โลกคู่ขนาน":"โลกจริง")+" — ห้องเรียนต้นแบบ\nWASD เดิน · เมาส์มอง · Q สลับโลก · E โต้ตอบ · Esc เมาส์\n"+
             (messageSent?"สลับโลกแล้วค้นหาคำตอบบนโต๊ะ":"หาโน้ตสีเหลืองบนโต๊ะ แล้วฝากข้อความ"),textStyle);
         GUI.Label(new Rect(Screen.width/2-8,Screen.height/2-15,30,30),"+",textStyle);
         if(focus!=null && dialogue==0) GUI.Label(new Rect(Screen.width/2-130,Screen.height/2+30,300,40),"E — อ่าน / พูดคุย",textStyle);
