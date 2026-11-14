@@ -70,7 +70,7 @@ public class PrototypeDoorTravel : MonoBehaviour
     {
         focusedDoor = null;
         if (loading || SceneFadeTransition.IsTransitioning ||
-            !Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out var hit, 2.6f))
+            !PrototypeThirdPerson.InteractionRay(playerCamera, out var hit))
             return false;
         if (System.Array.IndexOf(doorways, hit.collider) < 0) return false;
         focusedDoor = hit.collider;

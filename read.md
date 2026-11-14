@@ -204,3 +204,12 @@ The initial direct scene edit assigned roof file IDs above the signed 64-bit lim
 
 World switching uses Q in Classroom, Hallway and Rooftop, with matching HUD instructions. HallwayPlayer spawns five Capsule students when the hallway starts. Each uses a CharacterController capsule for solid collisions, a waypoint patrol, varied walking speed and short pauses. Blocked students wait and retrace their current segment. Students hide and disable collision in the other world, then return to their previous positions in the real world. The crowd is generated during Play Mode and is scoped to the hallway scene.
 Unity 6000.6.5f1 Play Mode validation passed with exit code 0. All five NPCs moved from their spawn positions, remained above the floor, hid with their colliders in the other world, and returned in the real world. CharacterController.minMoveDistance is zero to support small frame times. Physical keyboard input and visual appearance still need manual review.
+
+
+### Third-person movement and sprint — 2026-11-14
+
+ClassroomPrototype and HallwayPlayer now use PrototypeThirdPerson for movement and the camera. The player has a visible capsule body. Mouse movement controls yaw and pitch, WASD moves relative to camera yaw, and Left Shift selects 6 m/s sprint over 3.5 m/s walking. The camera follows up to 3 metres behind the character and uses sphere casts to retract at obstacles. The body hides when the camera is very close. Q still switches worlds.
+
+Door and classroom interactions now measure reach from the character while aiming through the camera. The camera remains a child of the player so existing scene travel can locate the CharacterController. Movement pauses for classroom dialogue and scene fades.
+
+Unity compiled successfully. Automated setup checks found the capsule and a valid camera distance in all three scenes. A Play Mode test with simulated W and Left Shift measured a run/walk ratio of 1.714283. The five-NPC movement/world-visibility regression passed. Temporary Edit Mode setup checks emitted Destroy-in-edit-mode warnings because they invoked runtime setup outside Play Mode. Visual camera behavior, stair travel and actual keyboard interaction still require manual playtesting.

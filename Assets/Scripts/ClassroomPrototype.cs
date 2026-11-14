@@ -8,7 +8,7 @@ public class ClassroomPrototype : MonoBehaviour
     [SerializeField] private Light sun;
     [SerializeField] private GameObject clue;
     [SerializeField] private Renderer floor;
-    private float pitch;
+    private PrototypeThirdPerson movement;
     private bool otherWorld;
     private int dialogue;
     private static bool messageSent;
@@ -22,6 +22,7 @@ public class ClassroomPrototype : MonoBehaviour
     private void Start()
     {
         if (player == null) BuildClassroom();
+        movement = PrototypeThirdPerson.Attach(player, view);
         ApplyWorld();
         LockCursor(true);
     }
@@ -79,6 +80,7 @@ public class ClassroomPrototype : MonoBehaviour
 
     private void Update()
     {
+        if (SceneFadeTransition.IsTransitioning) return;
         var keys=Keyboard.current;
         if(keys==null || player==null) return;
         if(keys.escapeKey.wasPressedThisFrame)
@@ -93,25 +95,14 @@ public class ClassroomPrototype : MonoBehaviour
             return;
         }
         if(Cursor.lockState!=CursorLockMode.Locked) return;
-        var mouse=Mouse.current;
-        if(mouse!=null)
-        {
-            var delta=mouse.delta.ReadValue()*.12f;
-            player.transform.Rotate(0,delta.x,0);
-            pitch=Mathf.Clamp(pitch-delta.y,-75,75);
-            view.transform.localRotation=Quaternion.Euler(pitch,0,0);
-        }
-        float x=(keys.dKey.isPressed?1:0)-(keys.aKey.isPressed?1:0);
-        float z=(keys.wKey.isPressed?1:0)-(keys.sKey.isPressed?1:0);
-        var move=Vector3.ClampMagnitude(player.transform.right*x+player.transform.forward*z,1);
-        player.Move((move*3.5f+Vector3.down*9.81f)*Time.deltaTime);
+        movement.Tick(keys);
         if(keys.qKey.wasPressedThisFrame)
         {
             otherWorld=!otherWorld;
             ApplyWorld();
         }
         focus=null;
-        if(Physics.Raycast(view.transform.position,view.transform.forward,out var hit,2.6f))
+        if(PrototypeThirdPerson.InteractionRay(view,out var hit))
         {
             if(hit.collider.name=="Note" || hit.collider.name=="Reply" || hit.collider.name=="Other student")
                 focus=hit.collider.name;
@@ -163,7 +154,7 @@ public class ClassroomPrototype : MonoBehaviour
         }
         GUI.Box(new Rect(12,12,620,160),"");
         GUI.Label(new Rect(25,20,590,145),
-            (otherWorld?"โลกคู่ขนาน":"โลกจริง")+" — ห้องเรียนต้นแบบ\nWASD เดิน · เมาส์มอง · Q สลับโลก · E โต้ตอบ · Esc เมาส์\n"+
+            (otherWorld?"โลกคู่ขนาน":"โลกจริง")+" — ห้องเรียนต้นแบบ\nWASD เดิน · เมาส์มอง · Q สลับโลก · L-Shift วิ่ง · E โต้ตอบ · Esc เมาส์\n"+
             (messageSent?"สลับโลกแล้วค้นหาคำตอบบนโต๊ะ":"หาโน้ตสีเหลืองบนโต๊ะ แล้วฝากข้อความ"),textStyle);
         GUI.Label(new Rect(Screen.width/2-8,Screen.height/2-15,30,30),"+",textStyle);
         if(focus!=null && dialogue==0) GUI.Label(new Rect(Screen.width/2-130,Screen.height/2+30,300,40),"E — อ่าน / พูดคุย",textStyle);
