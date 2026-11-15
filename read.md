@@ -213,3 +213,26 @@ ClassroomPrototype and HallwayPlayer now use PrototypeThirdPerson for movement a
 Door and classroom interactions now measure reach from the character while aiming through the camera. The camera remains a child of the player so existing scene travel can locate the CharacterController. Movement pauses for classroom dialogue and scene fades.
 
 Unity compiled successfully. Automated setup checks found the capsule and a valid camera distance in all three scenes. A Play Mode test with simulated W and Left Shift measured a run/walk ratio of 1.714283. The five-NPC movement/world-visibility regression passed. Temporary Edit Mode setup checks emitted Destroy-in-edit-mode warnings because they invoked runtime setup outside Play Mode. Visual camera behavior, stair travel and actual keyboard interaction still require manual playtesting.
+
+
+### Classroom ceiling lighting — 2026-11-16
+
+Added eight ceiling fixtures in two rows at x = -3 and 3 metres, with four positions along the classroom. Each fixture has a housing, emissive panel and downward spotlight. Normal-world lights use warm white, intensity 4, range 8 metres and a 110-degree outer cone. Two central lights cast soft shadows. ClassroomPrototype caches the authored light settings, switches to cool blue at 35 percent intensity in the other world, and restores the authored settings in the real world.
+
+Unity 6000.6.5f1 compiled, created and saved the classroom scene successfully, and verified eight light components. The saved scene, material and metadata were copied back from the isolated validation project. Visual Play Mode review is pending. The editor menu Tools > The Other Side > Add Classroom Ceiling Lights skips a scene that already contains the fixture group.
+
+### Hallway world-shift light puzzle — 2026-11-16
+
+Implemented the hallway prototype puzzle without replacing the existing maze or scene routes.
+
+- The existing partition at (0, 1.8, 10) blocks movement in World A. Q changes to World B, disables its solid collider, and shows a translucent outline. Its frame remains solid in both worlds.
+- Before returning to World A, the player's full capsule is checked against a trigger-only copy of the gate, including a 0.02-metre clearance margin. If the capsule overlaps, the switch is rejected, the player stays in World B, and a message asks them to move clear. The gate outline flashes red. This uses a capsule overlap query against an always-available sensor; direct penetration checks against the disabled gate did not pass validation in this project.
+- Read the entry note at x = 1.25, z = 8 with E. Cross the gate in World B and read the request notebook at x = 1.25, z = 12. The three switches are on the east wall around z = 15.2–16.8.
+- Inspect the panel in World B for the order: square, circle, diamond. Return to World A and press E while aiming at each corresponding switch. The sequence is switch indices 1, 0, 2. Incorrect input resets the sequence; after two mistakes, the hint appears directly. There is no timer or permanent failure.
+- Completing the sequence opens the gate in both worlds and activates three lights toward the rooftop stairs. Read the notebook again in World B for the reply.
+- PrototypeProgress retains the selected world, notebook state, sequence progress, mistakes, completion and reply across classroom, hallway and rooftop travel. State resets when starting a new Play session. This is not a disk save system.
+- Existing Q controls, third-person movement, Left Shift running, doorway return positions, staircase fades, roofs and five hallway students remain in place. No new packages were installed. No world-space room or location labels were added.
+
+Implementation: Assets/Scripts/HallwayLightPuzzle.cs, PrototypeProgress.cs, HallwayPlayer.cs and ClassroomPrototype.cs; Assets/Scenes/Hallway_Prototype.unity; Assets/Materials/HallwayPuzzle/. The targeted editor helper Assets/Editor/CreateHallwayLightPuzzle.cs creates the puzzle only if it is absent.
+
+Validation: Unity 6000.6.5f1 compiled the scripts and ran Play Mode in an isolated project copy, exiting with code 0. All 47 assertions passed, including solid/passable gate movement, repeated rejected world switches, capsule-edge overlap, note/switch interaction rays, incorrect sequences and hints, partial progress after real classroom door travel, permanent completion, rooftop fade travel and return, and retained NPC population. Test code and concise results are preserved under Tools/Validation/. These are automated state and collision checks, not a full visual or audio playthrough. git diff --check was run for authored changes. The main open Editor was not closed and unsaved scenes were not overwritten through Editor automation.

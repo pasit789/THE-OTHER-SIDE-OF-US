@@ -10,6 +10,9 @@ public class ClassroomPrototype : MonoBehaviour
     [SerializeField] private Renderer floor;
     private PrototypeThirdPerson movement;
     private bool otherWorld;
+    private Light[] ceilingLights;
+    private Color[] ceilingColors;
+    private float[] ceilingIntensities;
     private int dialogue;
     private static bool messageSent;
     private string focus;
@@ -22,7 +25,17 @@ public class ClassroomPrototype : MonoBehaviour
     private void Start()
     {
         if (player == null) BuildClassroom();
+        otherWorld = PrototypeProgress.OtherWorld;
         movement = PrototypeThirdPerson.Attach(player, view);
+        var lighting = GameObject.Find("Classroom ceiling lights");
+        ceilingLights = lighting != null ? lighting.GetComponentsInChildren<Light>() : System.Array.Empty<Light>();
+        ceilingColors = new Color[ceilingLights.Length];
+        ceilingIntensities = new float[ceilingLights.Length];
+        for (int i = 0; i < ceilingLights.Length; i++)
+        {
+            ceilingColors[i] = ceilingLights[i].color;
+            ceilingIntensities[i] = ceilingLights[i].intensity;
+        }
         ApplyWorld();
         LockCursor(true);
     }
@@ -99,6 +112,7 @@ public class ClassroomPrototype : MonoBehaviour
         if(keys.qKey.wasPressedThisFrame)
         {
             otherWorld=!otherWorld;
+            PrototypeProgress.OtherWorld = otherWorld;
             ApplyWorld();
         }
         focus=null;
@@ -116,6 +130,15 @@ public class ClassroomPrototype : MonoBehaviour
 
     private void ApplyWorld()
     {
+        if (ceilingLights != null)
+        {
+            for (int i = 0; i < ceilingLights.Length; i++)
+            {
+                if (ceilingLights[i] == null) continue;
+                ceilingLights[i].color = otherWorld ? new Color(.45f, .6f, 1) : ceilingColors[i];
+                ceilingLights[i].intensity = ceilingIntensities[i] * (otherWorld ? .35f : 1);
+            }
+        }
         sun.color=otherWorld?new Color(.45f,.6f,1):new Color(1,.86f,.65f);
         sun.intensity=otherWorld?.8f:1.3f;
         RenderSettings.ambientLight=otherWorld?new Color(.15f,.2f,.4f):new Color(.5f,.5f,.5f);

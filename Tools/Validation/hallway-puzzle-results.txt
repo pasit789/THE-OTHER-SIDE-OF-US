@@ -1,0 +1,48 @@
+PUZZLE_CHECK: Hallway player and puzzle load
+PUZZLE_CHECK: World A gate solid
+PUZZLE_CHECK: World A blocks capsule movement
+PUZZLE_CHECK: World B opens gate
+PUZZLE_CHECK: Repeated Q inside gate rejected 0
+PUZZLE_CHECK: Repeated Q inside gate rejected 1
+PUZZLE_CHECK: Repeated Q inside gate rejected 2
+PUZZLE_CHECK: Repeated Q inside gate rejected 3
+PUZZLE_CHECK: Repeated Q inside gate rejected 4
+PUZZLE_CHECK: Capsule edge intersection rejected even when centre outside gate
+PUZZLE_CHECK: World B capsule crosses gate
+PUZZLE_CHECK: Clear landing allows return to World A
+PUZZLE_CHECK: Third-person interaction reaches Entry note
+PUZZLE_CHECK: Request required before switch sequence
+PUZZLE_CHECK: Third-person interaction reaches Request notebook
+PUZZLE_CHECK: Request accepted
+PUZZLE_CHECK: Third-person interaction reaches Puzzle switch 0
+PUZZLE_CHECK: Third-person interaction reaches Puzzle switch 1
+PUZZLE_CHECK: Third-person interaction reaches Puzzle switch 2
+PUZZLE_CHECK: Switch to B for clue
+PUZZLE_CHECK: World B cannot operate switches
+PUZZLE_CHECK: Return to A at switch panel
+PUZZLE_CHECK: Wrong input resets sequence without softlock
+PUZZLE_CHECK: Two mistakes reveal hint
+PUZZLE_CHECK: First correct switch recorded
+PUZZLE_CHECK: Third-person interaction reaches Classroom 203
+PUZZLE_CHECK: Hallway door loads classroom
+PUZZLE_CHECK: Classroom destination
+PUZZLE_CHECK: World and partial progress survive classroom travel
+PUZZLE_CHECK: Classroom door returns to hallway
+PUZZLE_CHECK: Partial puzzle restored on return
+PUZZLE_CHECK: Door return position retained
+PUZZLE_CHECK: Complete sequence opens permanent shortcut in A
+PUZZLE_CHECK: Route light enabled
+PUZZLE_CHECK: Route light enabled
+PUZZLE_CHECK: Route light enabled
+PUZZLE_CHECK: Solved state ignores repeated switches
+PUZZLE_CHECK: Reply requires B
+PUZZLE_CHECK: Reply readable in B
+PUZZLE_CHECK: Solved gate permits switching inside former obstacle
+PUZZLE_CHECK: World input blocked during fade
+PUZZLE_CHECK: Fade reaches rooftop
+PUZZLE_CHECK: Rooftop retains A and solved state
+PUZZLE_CHECK: Rooftop Q remains available
+PUZZLE_CHECK: Rooftop return retains B
+PUZZLE_CHECK: Solved gate and reply persist after rooftop return
+PUZZLE_CHECK: Existing five hallway NPCs retained
+PUZZLE_PLAY_PASS: 47 assertions

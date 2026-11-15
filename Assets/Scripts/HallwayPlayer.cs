@@ -8,6 +8,7 @@ public class HallwayPlayer : MonoBehaviour
     private CharacterController controller;
     private PrototypeThirdPerson movement;
     private bool otherWorld;
+    private HallwayLightPuzzle puzzle;
     public bool IsOtherWorld => otherWorld;
     private Camera view;
     private Light[] sceneLights;
@@ -40,6 +41,10 @@ public class HallwayPlayer : MonoBehaviour
         originalAmbientMode = RenderSettings.ambientMode;
         originalBackground = view.backgroundColor;
         originalClearFlags = view.clearFlags;
+        otherWorld = PrototypeProgress.OtherWorld;
+        puzzle = FindFirstObjectByType<HallwayLightPuzzle>();
+        ApplyWorld();
+        if (puzzle != null) puzzle.Initialize(this);
         SetCursor(true);
         if (gameObject.scene.name == "Hallway_Prototype") HallwayWanderer.SpawnCrowd(this);
     }
@@ -56,6 +61,18 @@ public class HallwayPlayer : MonoBehaviour
         RenderSettings.ambientLight = otherWorld ? new Color(.15f, .2f, .4f) : originalAmbientLight;
         view.clearFlags = otherWorld ? CameraClearFlags.SolidColor : originalClearFlags;
         view.backgroundColor = otherWorld ? new Color(.05f, .08f, .2f) : originalBackground;
+        if (puzzle != null) puzzle.RefreshWorld();
+    }
+
+    public bool TrySwitchWorld()
+    {
+        if (SceneFadeTransition.IsTransitioning) return false;
+        bool target = !otherWorld;
+        if (puzzle != null && !puzzle.CanSwitchTo(target, controller)) return false;
+        otherWorld = target;
+        PrototypeProgress.OtherWorld = target;
+        ApplyWorld();
+        return true;
     }
 
     private void Update()
@@ -69,8 +86,7 @@ public class HallwayPlayer : MonoBehaviour
 
         if (keyboard.qKey.wasPressedThisFrame)
         {
-            otherWorld = !otherWorld;
-            ApplyWorld();
+            TrySwitchWorld();
         }
 
         movement.Tick(keyboard);
@@ -88,7 +104,7 @@ public class HallwayPlayer : MonoBehaviour
     {
         if (SceneFadeTransition.IsTransitioning) return;
         GUI.Box(new Rect(16, 16, 420, 70), UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.Replace("_Prototype", "").ToUpperInvariant() +
-            (otherWorld ? " / OTHER WORLD" : " / REAL WORLD") +
+            (otherWorld ? " / OTHER WORLD (B)" : " / REAL WORLD (A)") +
             "\nWASD - Walk    Mouse - Look    Esc - Cursor\nQ - Switch world    Left Shift - Run");
         if (Cursor.lockState != CursorLockMode.Locked &&
             GUI.Button(new Rect(16, 94, 160, 36), "Resume"))
