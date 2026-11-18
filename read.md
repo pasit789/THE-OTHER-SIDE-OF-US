@@ -240,3 +240,6 @@ Validation: Unity 6000.6.5f1 compiled the scripts and ran Play Mode in an isolat
 ### Library greybox — 2026-11-18
 
 The hallway now opens into a 12 × 10 metre library at the end of the branch through (16, 24). Its 2.6 metre entrance leads between three bookcases to a reading table with a greybox plank. Two ceiling lights use the hallway lighting system. The plank is a prop for the proposed repair task. Scene IDs and parent links were checked offline.
+
+### Desk repair minigame
+In Hallway Play Mode, switch to world B in the library. Aim at the loose plank on the reading table and the leg beside the shelves and press E for each. Take both to the broken desk just before the rooftop stairs. Press E, drag each part into its outline and right-click while dragging to rotate. Press Space in the green zone three times. Escape stores fitted parts and successful strikes for this play session. Completing the repair places a walkable deck across the gap. This replaces the three-switch activity. The repair props and gap are assembled when Hallway starts.

@@ -76,6 +76,25 @@ public class PrototypeThirdPerson : MonoBehaviour
         bodyRenderer.enabled = distance > .65f;
     }
 
+    public static void DrawInteractionKey(Camera camera, Collider target)
+    {
+        if (!target || !target.enabled || !target.gameObject.activeInHierarchy) return;
+        Bounds bounds = target.bounds;
+        Vector3 center = camera.WorldToScreenPoint(bounds.center);
+        if (center.z <= camera.nearClipPlane) return;
+
+        // Project the object's horizontal extent along the camera's right axis.
+        Vector3 right = camera.transform.right;
+        float radius = Vector3.Dot(bounds.extents,
+            new Vector3(Mathf.Abs(right.x), Mathf.Abs(right.y), Mathf.Abs(right.z)));
+        float offset = camera.WorldToScreenPoint(bounds.center + right * radius).x - center.x + 6;
+        float x = center.x + offset;
+        if (x + 32 > Screen.width) x = center.x - offset - 32;
+        float y = Screen.height - center.y - 14;
+        GUI.Box(new Rect(Mathf.Clamp(x, 0, Screen.width - 32),
+            Mathf.Clamp(y, 0, Screen.height - 28), 32, 28), "E");
+    }
+
     public static bool InteractionRay(Camera camera, out RaycastHit hit, float range = 2.6f)
     {
         var player = camera.GetComponentInParent<CharacterController>();

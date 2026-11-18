@@ -101,7 +101,6 @@ public class PrototypeDoorTravel : MonoBehaviour
     private void OnGUI()
     {
         if (Cursor.lockState != CursorLockMode.Locked || !FacingDoor()) return;
-        GUI.Box(new Rect(Screen.width / 2 - 150, Screen.height / 2 + 45, 300, 42),
-            destination == Hallway ? "E - Go to hallway" : "E - Enter " + focusedDoor.name);
+        PrototypeThirdPerson.DrawInteractionKey(playerCamera, focusedDoor);
     }
 }

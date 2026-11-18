@@ -35,6 +35,9 @@ public class HallwayLightPuzzle : MonoBehaviour
         player = owner;
         view = owner.GetComponentInChildren<Camera>();
         ghostMaterial = ghost.material;
+        foreach (Transform child in transform)
+            if (child != ghost.transform && child.name != "Gate frame") child.gameObject.SetActive(false);
+        enabled = false;
         // Keep a trigger-only copy available for queries while the solid gate is disabled.
         var probe = new GameObject("Gate occupancy sensor") { layer = 2 };
         probe.transform.SetParent(gate.transform, false);

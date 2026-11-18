@@ -15,7 +15,7 @@ public class ClassroomPrototype : MonoBehaviour
     private float[] ceilingIntensities;
     private int dialogue;
     private static bool messageSent;
-    private string focus;
+    private Collider focus;
     private GUIStyle textStyle;
     private GUIStyle buttonStyle;
 
@@ -119,11 +119,11 @@ public class ClassroomPrototype : MonoBehaviour
         if(PrototypeThirdPerson.InteractionRay(view,out var hit))
         {
             if(hit.collider.name=="Note" || hit.collider.name=="Reply" || hit.collider.name=="Other student")
-                focus=hit.collider.name;
+                focus=hit.collider;
         }
         if(focus!=null && keys.eKey.wasPressedThisFrame)
         {
-            dialogue=focus=="Other student"?3:focus=="Reply"?4:1;
+            dialogue=focus.name=="Other student"?3:focus.name=="Reply"?4:1;
             LockCursor(false);
         }
     }
@@ -175,12 +175,18 @@ public class ClassroomPrototype : MonoBehaviour
             textStyle.normal.textColor=Color.white;
             buttonStyle=new GUIStyle(GUI.skin.button){font=font,fontSize=20,wordWrap=true};
         }
-        GUI.Box(new Rect(12,12,620,160),"");
-        GUI.Label(new Rect(25,20,590,145),
-            (otherWorld?"โลกคู่ขนาน":"โลกจริง")+" — ห้องเรียนต้นแบบ\nWASD เดิน · เมาส์มอง · Q สลับโลก · L-Shift วิ่ง · E โต้ตอบ · Esc เมาส์\n"+
+        float panelWidth = Mathf.Min(410, Screen.width * .46f);
+        var task = new Rect(Screen.width-panelWidth-12,12,panelWidth,96);
+        GUI.Box(task,"");
+        GUI.Label(new Rect(task.x+10,task.y+4,task.width-20,task.height-8),"ภารกิจ\n"+
             (messageSent?"สลับโลกแล้วค้นหาคำตอบบนโต๊ะ":"หาโน้ตสีเหลืองบนโต๊ะ แล้วฝากข้อความ"),textStyle);
+        float controlsWidth = Mathf.Min(570, Screen.width-panelWidth-36);
+        GUI.Box(new Rect(12,12,controlsWidth,100),"");
+        GUI.Label(new Rect(22,16,controlsWidth-20,94),
+            (otherWorld?"โลกคู่ขนาน":"โลกจริง")+" — ห้องเรียน\nWASD เดิน · เมาส์มอง · Q สลับโลก · L-Shift วิ่ง · Esc เมาส์",textStyle);
         GUI.Label(new Rect(Screen.width/2-8,Screen.height/2-15,30,30),"+",textStyle);
-        if(focus!=null && dialogue==0) GUI.Label(new Rect(Screen.width/2-130,Screen.height/2+30,300,40),"E — อ่าน / พูดคุย",textStyle);
+        if(focus!=null && dialogue==0 && Cursor.lockState==CursorLockMode.Locked)
+            PrototypeThirdPerson.DrawInteractionKey(view, focus);
         if(dialogue==0)
         {
             if(Cursor.lockState!=CursorLockMode.Locked && GUI.Button(new Rect(Screen.width/2-120,Screen.height/2+80,240,50),"กลับไปเล่น",buttonStyle)) LockCursor(true);

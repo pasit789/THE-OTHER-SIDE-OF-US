@@ -9,6 +9,7 @@ public class HallwayPlayer : MonoBehaviour
     private PrototypeThirdPerson movement;
     private bool otherWorld;
     private HallwayLightPuzzle puzzle;
+    private DeskRepair repair;
     public bool IsOtherWorld => otherWorld;
     private Camera view;
     private Light[] sceneLights;
@@ -46,7 +47,11 @@ public class HallwayPlayer : MonoBehaviour
         ApplyWorld();
         if (puzzle != null) puzzle.Initialize(this);
         SetCursor(true);
-        if (gameObject.scene.name == "Hallway_Prototype") HallwayWanderer.SpawnCrowd(this);
+        if (gameObject.scene.name == "Hallway_Prototype") {
+            repair = gameObject.AddComponent<DeskRepair>();
+            repair.Setup(view);
+            HallwayWanderer.SpawnCrowd(this);
+        }
     }
 
     private void ApplyWorld()
@@ -62,13 +67,19 @@ public class HallwayPlayer : MonoBehaviour
         view.clearFlags = otherWorld ? CameraClearFlags.SolidColor : originalClearFlags;
         view.backgroundColor = otherWorld ? new Color(.05f, .08f, .2f) : originalBackground;
         if (puzzle != null) puzzle.RefreshWorld();
+        if (repair != null) repair.Refresh();
     }
 
     public bool TrySwitchWorld()
     {
         if (SceneFadeTransition.IsTransitioning) return false;
         bool target = !otherWorld;
-        if (puzzle != null && !puzzle.CanSwitchTo(target, controller)) return false;
+        if (repair != null && repair.Open) return false;
+        if (puzzle != null && !puzzle.CanSwitchTo(target, controller))
+        {
+            repair?.WarnGateOverlap();
+            return false;
+        }
         otherWorld = target;
         PrototypeProgress.OtherWorld = target;
         ApplyWorld();
@@ -80,6 +91,7 @@ public class HallwayPlayer : MonoBehaviour
         if (SceneFadeTransition.IsTransitioning) return;
         var keyboard = Keyboard.current;
         if (keyboard == null) return;
+        if (repair != null && repair.HandleInput(keyboard)) return;
         if (keyboard.escapeKey.wasPressedThisFrame)
             SetCursor(Cursor.lockState != CursorLockMode.Locked);
         if (Cursor.lockState != CursorLockMode.Locked) return;
@@ -103,7 +115,8 @@ public class HallwayPlayer : MonoBehaviour
     private void OnGUI()
     {
         if (SceneFadeTransition.IsTransitioning) return;
-        GUI.Box(new Rect(16, 16, 420, 70), UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.Replace("_Prototype", "").ToUpperInvariant() +
+        if (repair != null && repair.Open) return;
+        GUI.Box(new Rect(16, 16, Mathf.Min(420, Screen.width * .46f), 70), UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.Replace("_Prototype", "").ToUpperInvariant() +
             (otherWorld ? " / OTHER WORLD (B)" : " / REAL WORLD (A)") +
             "\nWASD - Walk    Mouse - Look    Esc - Cursor\nQ - Switch world    Left Shift - Run");
         if (Cursor.lockState != CursorLockMode.Locked &&
