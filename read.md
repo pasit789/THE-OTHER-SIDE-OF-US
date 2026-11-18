@@ -243,3 +243,9 @@ The hallway now opens into a 12 × 10 metre library at the end of the branch thr
 
 ### Desk repair minigame
 In Hallway Play Mode, switch to world B in the library. Aim at the loose plank on the reading table and the leg beside the shelves and press E for each. Take both to the broken desk just before the rooftop stairs. Press E, drag each part into its outline and right-click while dragging to rotate. Press Space in the green zone three times. Escape stores fitted parts and successful strikes for this play session. Completing the repair places a walkable deck across the gap. This replaces the three-switch activity. The repair props and gap are assembled when Hallway starts.
+
+### Hallway wall seal — 2026-11-19
+The desk and floor gap have been replaced by a solid wall before the stairs. Collect five fragments in world B in distinct hallway branches. Fit their engraved faces into five matching slots, then strike three progressively harder beats to release the wall in both worlds. The hallway floor stays continuous throughout the task.
+
+### Classroom chair models — 2026-11-19
+All fifteen student chairs use linked instances of Assets/Models/StudentChair.fbx. The original chair positions and seat/back collision boxes are retained. Unity reloaded the classroom in an isolated project and verified 20 meshes per chair, seat dimensions, and backrest direction.
