@@ -236,3 +236,7 @@ Implemented the hallway prototype puzzle without replacing the existing maze or 
 Implementation: Assets/Scripts/HallwayLightPuzzle.cs, PrototypeProgress.cs, HallwayPlayer.cs and ClassroomPrototype.cs; Assets/Scenes/Hallway_Prototype.unity; Assets/Materials/HallwayPuzzle/. The targeted editor helper Assets/Editor/CreateHallwayLightPuzzle.cs creates the puzzle only if it is absent.
 
 Validation: Unity 6000.6.5f1 compiled the scripts and ran Play Mode in an isolated project copy, exiting with code 0. All 47 assertions passed, including solid/passable gate movement, repeated rejected world switches, capsule-edge overlap, note/switch interaction rays, incorrect sequences and hints, partial progress after real classroom door travel, permanent completion, rooftop fade travel and return, and retained NPC population. Test code and concise results are preserved under Tools/Validation/. These are automated state and collision checks, not a full visual or audio playthrough. git diff --check was run for authored changes. The main open Editor was not closed and unsaved scenes were not overwritten through Editor automation.
+
+### Library greybox — 2026-11-18
+
+The hallway now opens into a 12 × 10 metre library at the end of the branch through (16, 24). Its 2.6 metre entrance leads between three bookcases to a reading table with a greybox plank. Two ceiling lights use the hallway lighting system. The plank is a prop for the proposed repair task. Scene IDs and parent links were checked offline.
