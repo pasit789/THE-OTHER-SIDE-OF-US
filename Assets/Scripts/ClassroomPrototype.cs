@@ -135,15 +135,17 @@ public class ClassroomPrototype : MonoBehaviour
             for (int i = 0; i < ceilingLights.Length; i++)
             {
                 if (ceilingLights[i] == null) continue;
-                ceilingLights[i].color = otherWorld ? new Color(.45f, .6f, 1) : ceilingColors[i];
+                ceilingLights[i].color = otherWorld ? new Color(.27f, .58f, .86f) : ceilingColors[i];
                 ceilingLights[i].intensity = ceilingIntensities[i] * (otherWorld ? .35f : 1);
             }
         }
-        sun.color=otherWorld?new Color(.45f,.6f,1):new Color(1,.86f,.65f);
-        sun.intensity=otherWorld?.8f:1.3f;
-        RenderSettings.ambientLight=otherWorld?new Color(.15f,.2f,.4f):new Color(.5f,.5f,.5f);
-        view.backgroundColor=otherWorld?new Color(.05f,.08f,.2f):new Color(.5f,.7f,.85f);
-        floor.sharedMaterial.color=otherWorld?new Color(.2f,.25f,.4f):new Color(.65f,.61f,.5f);
+        sun.color=otherWorld?new Color(.26f,.56f,.82f):new Color(1,.82f,.66f);
+        sun.intensity=otherWorld?.72f:1.05f;
+        RenderSettings.ambientMode=UnityEngine.Rendering.AmbientMode.Flat;
+        RenderSettings.ambientLight=otherWorld?new Color(.10f,.19f,.27f):new Color(.46f,.40f,.35f);
+        view.clearFlags=CameraClearFlags.SolidColor;
+        view.backgroundColor=otherWorld?new Color(.055f,.13f,.20f):new Color(.93f,.78f,.60f);
+
         clue.SetActive(otherWorld && messageSent);
     }
 

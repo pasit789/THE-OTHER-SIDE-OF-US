@@ -249,3 +249,30 @@ The desk and floor gap have been replaced by a solid wall before the stairs. Col
 
 ### Classroom chair models — 2026-11-19
 All fifteen student chairs use linked instances of Assets/Models/StudentChair.fbx. The original chair positions and seat/back collision boxes are retained. Unity reloaded the classroom in an isolated project and verified 20 meshes per chair, seat dimensions, and backrest direction.
+
+### Low-poly classroom art — 2026-11-20
+The classroom uses five Blender-authored low-poly FBX assets: 15 student desks, a teacher desk, the teaching board, six window-wall modules and 40 parquet modules. Unity reloaded the scene and verified 63 linked model instances. Play Mode previews captured from the same camera angle in both lighting states are in Docs/Previews.
+
+### 2026-11-20 — รายการรอนำขึ้นเว็บ Progress
+
+- ห้องเรียน Greybox และการโต้ตอบ: เดิน มอง อ่านโน้ต ฝากข้อความและอ่านคำตอบในอีกโลก มีตัวเลือกบทสนทนาต้นแบบ
+- การควบคุม: กล้องบุคคลที่สาม วิ่งด้วย Left Shift สลับโลกด้วย Q และแสดง E ข้างวัตถุที่เล็ง
+- ฉากและการเดินทาง: ห้องเรียน โถงเขาวงกต ห้องสมุดภายในโถง และดาดฟ้า เดินกลับทางประตูได้ บันไดเฟดดำก่อนเปลี่ยนฉาก
+- โถง: นักเรียนเดินลาดตระเวน 5 คน ระบบกันสลับโลกทับประตูกั้น และจำความคืบหน้าระหว่างฉากในรอบเล่น
+- ปริศนาปัจจุบัน: เก็บเศษกำแพง 5 จุดในโลก B ประกอบชิ้นส่วนและกดจังหวะปลดผนึก 3 ครั้ง คอมไพล์ผ่าน รอเล่นเส้นทางครบด้วยมือ
+- ศิลป์: โมเดล Blender/FBX 6 แบบ วางในห้องเรียน 78 ตำแหน่ง เก้าอี้ 15 โต๊ะนักเรียน 15 โต๊ะครู 1 กระดาน 1 พื้น 40 และผนังหน้าต่าง 6 ชุด จัดแสงโลก A/B และเรนเดอร์เปรียบเทียบใน Play Mode แล้ว
+- GitHub ยืนยันถึง f200d6f (เก้าอี้และปริศนากำแพง) ชุดศิลป์ห้องเรียนล่าสุด 5 แบบอยู่ในเครื่อง ขั้นทดสอบการเดินและอ่านโน้ตหลังเปลี่ยนโมเดลยังรอดำเนินการ
+- Encounter และเดโม 15 นาทียังไม่ยืนยันว่าเสร็จ
+
+บันทึกลงบอร์ดแล้วใน Brave วันที่ 20 พฤศจิกายน 2026 และตรวจหลังโหลดใหม่: เสร็จ 8/27 (30%) กำลังทำ 6 ติดปัญหา 0 บอร์ดรุ่นนี้เก็บข้อมูลเฉพาะเบราว์เซอร์ ภาพยืนยันอยู่ที่ Docs/Previews/Progress-board.jpg
+
+### Classroom fittings
+Added three low-poly Blender/FBX assets. Unity reloaded the classroom and verified 69 linked instances: one door, eight twin-tube fixtures and sixty acoustic ceiling modules. The doorway collider and all eight original lights are active. Manual traversal remains untested.
+
+### Classroom door reference revision
+
+Replaced the classroom door FBX with a low-poly asymmetric timber double door, frosted transom, vertical vision panel, metal protection plates and lever handle. Source, export and review render are stored separately under the ClassroomDoorRevision_v01 folders. Unity batch validation of the classroom scene found five URP mesh renderers and an enabled door collider. Play Mode travel was not retested.
+
+### Round twin-tube classroom lights
+
+Revised all eight classroom fixtures with paired cylindrical tubes, rounded sockets and folded reflectors. Enabled emission on the tube material. Unity batch validation verified eight fixture instances and eight enabled lights. Blender source, FBX and preview are archived separately under RoundTubeRevision_v01. Play Mode visual review is pending.

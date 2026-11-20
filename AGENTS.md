@@ -77,3 +77,7 @@ Respect an open Editor and its unsaved scenes. Do not force-close it or remove l
 For scene transitions, verify destination inclusion in Build Settings, a supported spawn position, input lock during loading, and return travel. For UI, verify long Thai text, keyboard selection, and the actual viewport size when relevant.
 
 Report changed files, validation results, decisions made without explicit guidance, and remaining limits. Run `git diff --check` for authored text. Commit or push only when requested. Update `read.md` when changing the skill installation or agent configuration.
+
+## Game progress board
+
+After completing project work that changes a tracked deliverable, update the corresponding task on https://the-other-side-preproduction-3768.petchpasit.chatgpt.site in the same turn. Use the existing row if possible, record the verification performed and distinguish local completion, manual playtesting and GitHub publication. Verify the saved board state. If access is blocked, record pending updates in read.md and report them as pending until the live board confirms them.
