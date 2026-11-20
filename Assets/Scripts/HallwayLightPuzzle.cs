@@ -90,7 +90,7 @@ public class HallwayLightPuzzle : MonoBehaviour
 
     public void ReadEntry()
     {
-        Tell("โน้ตข้างประตู\n“ฉันเปิดทางฝั่งนี้ให้แล้ว ลองมองจากที่ที่ฉันอยู่”\nกด Q แล้วเดินผ่านประตู");
+        Tell("โน้ตข้างประตู\n“ฉันเปิดทางฝั่งนี้ให้แล้ว ลองมองจากที่ที่ฉันอยู่”\nเปิดสมุดเพื่อข้ามโลก แล้วเดินผ่านประตู");
     }
 
     public void ReadRequest()
@@ -166,7 +166,7 @@ public class HallwayLightPuzzle : MonoBehaviour
         string objective = PrototypeProgress.LightReplyRead ? "ตามแสงไฟไปบันไดดาดฟ้า" :
             PrototypeProgress.HallwayLightsSolved ? "อ่านคำตอบในสมุด — โลก B" :
             PrototypeProgress.LightRequestRead ? "เปิดไฟให้อีกฝั่ง  " + PrototypeProgress.LightSequenceStep + "/3 — ดูคำใบ้โลก B / กดสวิตช์โลก A" :
-            "สำรวจโน้ตข้างประตูเหล็ก — Q สลับโลก / E อ่าน";
+            "สำรวจโน้ตข้างประตูเหล็ก — E อ่าน";
         GUI.Box(new Rect(16, Screen.height - 70, width, 58), "");
         GUI.Label(new Rect(26, Screen.height - 65, width - 20, 52), objective, text);
         GUI.Label(new Rect(Screen.width / 2 - 7, Screen.height / 2 - 14, 25, 30), "+", text);

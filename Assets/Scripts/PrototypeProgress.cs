@@ -4,6 +4,14 @@ using UnityEngine;
 public static class PrototypeProgress
 {
     public static bool OtherWorld { get; set; }
+    private static bool notebookRead;
+    public static string OpenNotebook()
+    {
+        string label = notebookRead ? (OtherWorld ? "กลับโลกเดิม" : "ข้ามไปอีกโลก") : "พลิกไปอีกหน้า";
+        notebookRead = true;
+        return label;
+    }
+
     public static bool LightRequestRead { get; set; }
     public static bool HallwayLightsSolved { get; set; }
     public static bool LightReplyRead { get; set; }
@@ -13,6 +21,7 @@ public static class PrototypeProgress
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
     private static void Reset()
     {
+        notebookRead = false;
         OtherWorld = false;
         LightRequestRead = false;
         HallwayLightsSolved = false;

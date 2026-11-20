@@ -14,6 +14,7 @@ public class ClassroomPrototype : MonoBehaviour
     private Color[] ceilingColors;
     private float[] ceilingIntensities;
     private int dialogue;
+    private string notebookChoice;
     private static bool messageSent;
     private Collider focus;
     private GUIStyle textStyle;
@@ -109,12 +110,6 @@ public class ClassroomPrototype : MonoBehaviour
         }
         if(Cursor.lockState!=CursorLockMode.Locked) return;
         movement.Tick(keys);
-        if(keys.qKey.wasPressedThisFrame)
-        {
-            otherWorld=!otherWorld;
-            PrototypeProgress.OtherWorld = otherWorld;
-            ApplyWorld();
-        }
         focus=null;
         if(PrototypeThirdPerson.InteractionRay(view,out var hit))
         {
@@ -124,6 +119,7 @@ public class ClassroomPrototype : MonoBehaviour
         if(focus!=null && keys.eKey.wasPressedThisFrame)
         {
             dialogue=focus.name=="Other student"?3:focus.name=="Reply"?4:1;
+            if (dialogue == 1) notebookChoice = PrototypeProgress.OpenNotebook();
             LockCursor(false);
         }
     }
@@ -154,9 +150,9 @@ public class ClassroomPrototype : MonoBehaviour
         if(dialogue==1 && choice==1)
         {
             messageSent=true;
-            dialogue=2;
+            otherWorld = !otherWorld;
+            PrototypeProgress.OtherWorld = otherWorld;
             ApplyWorld();
-            return;
         }
         dialogue=0;
         LockCursor(true);
@@ -181,11 +177,11 @@ public class ClassroomPrototype : MonoBehaviour
         var task = new Rect(Screen.width-panelWidth-12,12,panelWidth,96);
         GUI.Box(task,"");
         GUI.Label(new Rect(task.x+10,task.y+4,task.width-20,task.height-8),"ภารกิจ\n"+
-            (messageSent?"สลับโลกแล้วค้นหาคำตอบบนโต๊ะ":"หาโน้ตสีเหลืองบนโต๊ะ แล้วฝากข้อความ"),textStyle);
+            (messageSent?"ค้นหาคำตอบบนโต๊ะในอีกโลก":"หาโน้ตสีเหลืองบนโต๊ะ แล้วเปิดอ่าน"),textStyle);
         float controlsWidth = Mathf.Min(570, Screen.width-panelWidth-36);
         GUI.Box(new Rect(12,12,controlsWidth,100),"");
         GUI.Label(new Rect(22,16,controlsWidth-20,94),
-            (otherWorld?"โลกคู่ขนาน":"โลกจริง")+" — ห้องเรียน\nWASD เดิน · เมาส์มอง · Q สลับโลก · L-Shift วิ่ง · Esc เมาส์",textStyle);
+            (otherWorld?"โลกคู่ขนาน":"โลกจริง")+" — ห้องเรียน\nWASD เดิน · เมาส์มอง · L-Shift วิ่ง · Esc เมาส์",textStyle);
         GUI.Label(new Rect(Screen.width/2-8,Screen.height/2-15,30,30),"+",textStyle);
         if(focus!=null && dialogue==0 && Cursor.lockState==CursorLockMode.Locked)
             PrototypeThirdPerson.DrawInteractionKey(view, focus);
@@ -202,7 +198,7 @@ public class ClassroomPrototype : MonoBehaviour
             dialogue==3?"นักเรียน — โต๊ะตัวเดิมอาจมีบางอย่างต่างออกไป เมื่อมองจากอีกโลก":
             "ข้อความจากอีกโลก — ฉันเห็นข้อความแล้ว ขอบคุณที่ยังไม่ลืมกัน";
         GUI.Label(new Rect(area.x+20,area.y+20,width-40,125),line,textStyle);
-        if(GUI.Button(new Rect(area.x+20,area.y+150,width/2-30,75),dialogue==1?"1 — ฝากข้อความ":"1 — เข้าใจแล้ว",buttonStyle)) Choose(1);
-        if(GUI.Button(new Rect(area.x+width/2+10,area.y+150,width/2-30,75),dialogue==1?"2 — ไว้ก่อน":"2 — กลับไปสำรวจ",buttonStyle)) Choose(2);
+        if(GUI.Button(new Rect(area.x+20,area.y+150,width/2-30,75),dialogue==1?"1 — "+notebookChoice:"1 — เข้าใจแล้ว",buttonStyle)) Choose(1);
+        if(GUI.Button(new Rect(area.x+width/2+10,area.y+150,width/2-30,75),dialogue==1?"2 — ปิดสมุด":"2 — กลับไปสำรวจ",buttonStyle)) Choose(2);
     }
 }
